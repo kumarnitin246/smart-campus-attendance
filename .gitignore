@@ -1,0 +1,125 @@
+# Smart Campus Attendance Management System
+
+A secure, role-based, database-driven college/polytechnic attendance and academic management system built for diploma final-year projects.
+
+## Tech Stack
+- Frontend: React + Vite + Tailwind-inspired CSS
+- Backend: Node.js + Express + Prisma ORM
+- Database: SQLite (production-ready structure, easy to migrate to PostgreSQL/MySQL)
+- Auth: JWT + bcrypt
+- File handling: multer
+
+## Features
+- Teacher and student roles with secure authentication
+- Subject creation and management with unique subject codes
+- Student enrollment requests with approval workflow
+- Attendance marking and reporting
+- Assignment and project management
+- Notifications, dashboard analytics, and reports
+- Responsive SaaS-style UI
+
+## Project Structure
+
+```text
+smart-campus-attendance/
+├── backend/
+│   ├── prisma/
+│   │   └── schema.prisma
+│   ├── src/
+│   │   ├── app.js
+│   │   ├── config.js
+│   │   ├── database.js
+│   │   ├── server.js
+│   │   ├── seed.js
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   └── errorHandler.js
+│   │   ├── routes/
+│   │   │   ├── assignmentRoutes.js
+│   │   │   ├── attendanceRoutes.js
+│   │   │   ├── authRoutes.js
+│   │   │   ├── enrollmentRoutes.js
+│   │   │   ├── notificationRoutes.js
+│   │   │   ├── projectRoutes.js
+│   │   │   ├── reportRoutes.js
+│   │   │   └── subjectRoutes.js
+│   │   └── utils/
+│   │       ├── fileUpload.js
+│   │       ├── jwt.js
+│   │       └── password.js
+│   ├── .env.example
+│   ├── package.json
+│   └── README.md
+├── frontend/
+│   ├── src/
+│   │   ├── api/
+│   │   │   └── client.js
+│   │   ├── components/
+│   │   │   ├── Layout.jsx
+│   │   │   ├── StatCard.jsx
+│   │   │   ├── EmptyState.jsx
+│   │   │   └── Modal.jsx
+│   │   ├── context/
+│   │   │   └── AuthContext.jsx
+│   │   ├── pages/
+│   │   │   ├── AssignmentsPage.jsx
+│   │   │   ├── AttendancePage.jsx
+│   │   │   ├── EnrollmentRequestsPage.jsx
+│   │   │   ├── FindCoursesPage.jsx
+│   │   │   ├── LoginPage.jsx
+│   │   │   ├── MyCoursesPage.jsx
+│   │   │   ├── NotificationsPage.jsx
+│   │   │   ├── ProfilePage.jsx
+│   │   │   ├── ProjectsPage.jsx
+│   │   │   ├── RegisterPage.jsx
+│   │   │   ├── ReportsPage.jsx
+│   │   │   ├── StudentDashboardPage.jsx
+│   │   │   ├── SubjectDetailPage.jsx
+│   │   │   ├── TeacherDashboardPage.jsx
+│   │   │   └── TeacherSubjectsPage.jsx
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   │   └── utils.js
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   └── README.md
+├── .gitignore
+├── README.md
+└── package.json
+```
+
+## Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## Backend Setup
+
+```bash
+cd backend
+npm install
+npx prisma generate
+npx prisma db push
+npm run seed
+npm run dev
+```
+
+## Demo Accounts
+
+- Teacher: `teacher@smartcampus.com` / `Teacher@123`
+- Student: `student@smartcampus.com` / `Student@123`
+
+## Security Notes
+- Password hashing with bcrypt
+- JWT protected routes
+- Backend authorization checks for teacher and student data
+- SQL injection protection via Prisma
+- Input validation and user ownership checks
+
+## License
+MIT

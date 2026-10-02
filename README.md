@@ -1,2 +1,11 @@
-# smart-campus-attendance
-Professional Smart Campus Attendance &amp; Academic Management System for colleges/polytechnics
+node_modules
+.env
+.env.local
+.DS_Store
+backend/.env
+backend/prisma/dev.db
+backend/prisma/*.db
+backend/uploads
+frontend/dist
+frontend/node_modules
+coverage
